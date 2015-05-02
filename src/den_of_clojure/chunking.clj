@@ -6,8 +6,6 @@
 ;; - ??? Figure out some kind of eval-in-popup thinger?
 ;; - Save any live-coding parts out to chapter-by-chapter files, then
 ;;   M-x insert-file
-;; - TODO Move the ubersource plugin into this project and add notes to the README
-;;   https://github.com/puppetlabs/lein-ubersource
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 1. WHAT ARE SEQS?
