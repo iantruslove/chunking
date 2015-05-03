@@ -117,11 +117,10 @@ rr
 ;; **
 
 ;; @@
-(defn combinef
-  ([]
-   [])                           ; return identity
-  ([acc val]
-   (into acc val)))              ; combine
+(def combinef
+  (r/monoid               ; a helper for generate combining fns
+   into                   ; the combine operation
+   (constantly [])))      ; the identity constructor
 
 (def num-per-partition 10)
 
