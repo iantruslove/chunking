@@ -59,3 +59,10 @@
 ;; Be careful that you unchunk the right thing...
 (take 1 (unchunk (map do-work (range 100))))
 ;; @@
+
+;; **
+;;; ---
+;;; [prev](/worksheet.html?filename=src/den_of_clojure/sec4.clj)
+;;; [top](/worksheet.html?filename=src/den_of_clojure/sec0.clj)
+;;; [next](/worksheet.html?filename=src/den_of_clojure/sec6.clj)
+;; **

@@ -58,3 +58,10 @@
 ;;;   than you realize. Need to be aware that this can happen,
 ;;;   sometimes even if you're careful to avoid it.
 ;; **
+
+;; **
+;;; ---
+;;; [prev](/worksheet.html?filename=src/den_of_clojure/sec2.clj)
+;;; [top](/worksheet.html?filename=src/den_of_clojure/sec0.clj)
+;;; [next](/worksheet.html?filename=src/den_of_clojure/sec4.clj)
+;; **

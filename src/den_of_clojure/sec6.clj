@@ -43,3 +43,10 @@
 
 (reduce-over do-work (range 10))
 ;; @@
+
+;; **
+;;; ---
+;;; [prev](/worksheet.html?filename=src/den_of_clojure/sec5.clj)
+;;; [top](/worksheet.html?filename=src/den_of_clojure/sec0.clj)
+;;; [next](/worksheet.html?filename=src/den_of_clojure/sec7.clj)
+;; **
