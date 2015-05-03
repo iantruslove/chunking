@@ -13,14 +13,14 @@
 ;;;
 ;;; ## Contents
 ;;;
-;;; 1. What are seqs?
-;;; 2. So what about lazy seqs?
-;;; 3. ...and chunked seqs?
-;;; 4. Identifying chunked seqs
-;;; 5. Unchunking
-;;; 6. Be eager, not lazy (or, The Way Of The Reduce)
-;;; 7. Reducers (maybe)
-;;; 8. Transducers (maybe maybe)
+;;; 1. [What are seqs?](/worksheet.html?filename=src/den_of_clojure/sec1.clj)
+;;; 2. [So what about lazy seqs?](/worksheet.html?filename=src/den_of_clojure/sec2.clj)
+;;; 3. [...and chunked seqs?](/worksheet.html?filename=src/den_of_clojure/sec3.clj)
+;;; 4. [Identifying chunked seqs](/worksheet.html?filename=src/den_of_clojure/sec4.clj)
+;;; 5. [Unchunking](/worksheet.html?filename=src/den_of_clojure/sec5.clj)
+;;; 6. [Be eager, not lazy (or, The Way Of The Reduce)](/worksheet.html?filename=src/den_of_clojure/sec6.clj)
+;;; 7. [Reducers (maybe)](/worksheet.html?filename=src/den_of_clojure/sec7.clj)
+;;; 8. [Transducers (maybe maybe)](/worksheet.html?filename=src/den_of_clojure/sec8.clj)
 ;; **
 
 ;; **
