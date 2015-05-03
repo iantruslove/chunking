@@ -15,7 +15,9 @@
 ;; **
 
 ;; @@
-(first (map println (range 100)))
+(first
+ (map println
+      (range 100)))
 ;; @@
 
 ;; **

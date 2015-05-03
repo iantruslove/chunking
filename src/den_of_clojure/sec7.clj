@@ -4,13 +4,17 @@
 ;;; # 7. REDUCERS
 ;;;
 ;;; ## What are reducers?
-;;; An alternative way to manipulate collections.
+;;; An alternative way to manipulate collections, separating the
+;;; details of the computation from the implementation and semantics
+;;; of the collection.
 ;;;
 ;;; From the docs:
 ;;; > *Sequence functions are typically applied lazily, in order, create
 ;;; > intermediate results, and in a single thread.*
 ;;;
-;;; and
+;;; i.e. reducers are not these things.
+;;;
+;;; Also,
 ;;;
 ;;; > *A reducer is the combination of a reducible collection  with a
 ;;; > reducing function.*
@@ -132,6 +136,14 @@ rr
               combinef               ; partition combining fn
               conj)))                ; reducing fn
 ;; @@
+
+;; **
+;;; ## When to use reducers?
+;;; * When processing large collections of data
+;;; * When you want to optimize the processing and avoid intermediate results
+;;; * When parallelization would help
+;;; * When you specifically want control of how your collection implements `CollReduce`
+;; **
 
 ;; **
 ;;; ## Resources:

@@ -14,6 +14,9 @@
 ;;;
 ;;; *(Source, plus good discussion at
 ;;; http://stackoverflow.com/questions/3407876/how-do-i-avoid-clojures-chunking-behavior-for-lazy-seqs-that-i-want-to-short-ci)*
+;;;
+;;; Remember how basic lists (whether literal, or the result of cons
+;;; calls) don't get chunked? This function uses that behavior:
 ;; **
 
 ;; @@
@@ -23,11 +26,6 @@
      (cons (first s)
            (unchunk (next s))))))
 ;; @@
-
-;; **
-;;; Remember how basic lists (whether literal, or the result of cons
-;;; calls) don't get chunked?
-;; **
 
 ;; **
 ;;; Unchunking in action:
@@ -41,6 +39,8 @@
 
 ;; **
 ;;; Original:
+;;;
+;;; *Is Gorilla REPL showing all expected output here? Bug? Go to Emacs...*
 ;; **
 
 ;; @@

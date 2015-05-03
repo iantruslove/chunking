@@ -2,6 +2,8 @@
 
 ;; **
 ;;; # 2. SO WHAT ABOUT LAZY SEQS?
+;;;
+;;; To Infinity And Beyond!
 ;; **
 
 ;; @@
@@ -12,8 +14,6 @@
 ;; @@
 
 ;; **
-;;; To Infinity And Beyond!
-;;;
 ;;; Lazy seqs are really handy for dealing with unbounded input:
 ;; **
 
@@ -21,8 +21,13 @@
 (def to-infinity (iterate inc 0))
 
 (take 10 to-infinity)
+;; @@
 
-;; Run some calculations on the seq:
+;; **
+;;; Run some calculations on the seq. `map` is the go-to function for this:
+;; **
+
+;; @@
 (->> to-infinity
      (map #(* % %))
      (drop 100)
@@ -74,6 +79,8 @@
 ;; @@
 
 ;; **
+;;; ## Side effects
+;;;
 ;;; Be wary if you're unintentionally expecting side effects to happen eagerly...
 ;; **
 
@@ -90,6 +97,10 @@
 (def db-ids (map insert-item input-data))
 ;; @@
 
+;; **
+;;; Laziness in action:
+;; **
+
 ;; @@
 (println db-ids)
 ;; @@
@@ -103,10 +114,6 @@
 ;; @@
 (def db-ids-2 (doall (map insert-item input-data)))
 ;; @@
-
-;; **
-;;; **TODO:** come up with a more realistic example - say open resource handles, or writing out files that don't get written until a lazy seq is realized
-;; **
 
 ;; **
 ;;; ## Generating lazy seqs

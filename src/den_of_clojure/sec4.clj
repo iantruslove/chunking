@@ -71,10 +71,22 @@
 ;; **
 
 ;; @@
-(chunked-seq? (vec (range 100)))
-
 (first (map println (vec (range 100))))
+;; @@
 
+;; **
+;;; Is the input chunked?
+;; **
+
+;; @@
+(chunked-seq? (vec (range 100)))
+;; @@
+
+;; **
+;;; What about the output?
+;; **
+
+;; @@
 (chunked-seq? (map println (vec (range 100))))
 ;; @@
 
