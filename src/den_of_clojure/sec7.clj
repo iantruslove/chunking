@@ -3,8 +3,22 @@
 ;; **
 ;;; # 7. REDUCERS
 ;;;
-;;; What are reducers?
-;;; - clojure.reducers namespace
+;;; ## What are reducers?
+;;; An alternative way to manipulate collections.
+;;;
+;;; From the docs:
+;;; > *Sequence functions are typically applied lazily, in order, create
+;;; > intermediate results, and in a single thread.*
+;;;
+;;; and
+;;;
+;;; > *A reducer is the combination of a reducible collection  with a
+;;; > reducing function.*
+;;;
+;;; Execution is deferred until the final reduction - for which you
+;;; can use `reduce`, `into`, or `r/foldcat`.
+;;;
+;;; Implemented as a library in the `clojure.reducers` namespace.
 ;; **
 
 ;; @@
@@ -12,7 +26,35 @@
   (:require [clojure.core.reducers :as r]))
 ;; @@
 
+;; @@
+(def rr (r/map inc (range 20)))
+
+rr
+;; @@
+
+;; @@
+(reduce + rr)
+
+(into #{} rr)
+
+(r/foldcat rr)
+;; @@
+
+;; @@
+(r/foldcat (r/map (partial * 2) rr))
+;; @@
+
+;; @@
+(def fc (r/foldcat (r/map (partial * 2) rr)))
+
+(reduce + fc)
+
+(seq fc)
+;; @@
+
 ;; **
+;;; ## Quick reducers example
+;;;
 ;;; Back in section 3, we had this example:
 ;; **
 
@@ -37,27 +79,32 @@
 ;; @@
 
 ;; **
-;;; Rewriting that using reducers looks very similar:
+;;; Rewriting that using reducers looks very similar (I added a `time`
+;;; call and used `->>` to make it a little more readable; it's
+;;; identical otherwise):
 ;; **
 
 ;; @@
-(time
- (use-valid-results
-  (into []
-        (r/take-while valid-result?
-                      (r/map lookup-item starting-values)))))
+(->> starting-values
+     (r/map lookup-item)
+     (r/take-while valid-result?)
+     (into [])
+     use-valid-results
+     time)
 ;; @@
 
 ;; **
-;;; Reducers are composable:
+;;; Reducers are composable (but note that the order of operation is
+;;; the same as `->`):
 ;; **
 
 ;; @@
-(time
- (use-valid-results
-  (into [] ((comp (r/take-while valid-result?)
-                  (r/map lookup-item))
-            starting-values))))
+(def all-valid-results
+  (comp (r/take-while valid-result?)
+        (r/map lookup-item)))
+
+(use-valid-results
+ (into [] (all-valid-results starting-values)))
 ;; @@
 
 ;; **
@@ -72,18 +119,19 @@
 ;; @@
 (defn combinef
   ([]
-   [])                                  ; return identity
+   [])                           ; return identity
   ([acc val]
-   (into acc val)))                     ; combine
+   (into acc val)))              ; combine
 
 (def num-per-partition 10)
 
 (time
- (r/fold num-per-partition
-         combinef                       ; partition combining fn
-         conj                           ; reducing fn
-         (r/filter valid-result?
-                   (r/map lookup-item (shuffle starting-values)))))
+ (->> (shuffle starting-values)
+      (r/map lookup-item)
+      (r/filter valid-result?)
+      (r/fold num-per-partition
+              combinef               ; partition combining fn
+              conj)))                ; reducing fn
 ;; @@
 
 ;; **
