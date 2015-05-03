@@ -138,7 +138,7 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 6. SPOTTING CHUNKING
+;; 4. IDENTIFYING CHUNKED SEQS
 
 ;; Back to simple examples...
 ;; - collections
@@ -211,7 +211,6 @@
 (reduce-over do-work (range 10))
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 7. REDUCERS
 
@@ -228,8 +227,6 @@
 ;;     - http://www.infoq.com/presentations/clojure-reducers
 ;;   - Aphyr's Tesser library has some really interesting ideas
 ;;     - https://github.com/aphyr/tesser
-
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
