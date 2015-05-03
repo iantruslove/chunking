@@ -4,6 +4,7 @@ Chunking talk for Den of Clojure.
 
 ## Usage
 
+* Run `lein gorilla` to start up Gorilla REPL
 * Run `lein ubersource` to pull down source for all dependencies
 
 ## License
