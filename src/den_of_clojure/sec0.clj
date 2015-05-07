@@ -20,7 +20,7 @@
 ;;; 5. [Unchunking](/worksheet.html?filename=src/den_of_clojure/sec5.clj)
 ;;; 6. [Be eager, not lazy (or, The Way Of The Reduce)](/worksheet.html?filename=src/den_of_clojure/sec6.clj)
 ;;; 7. [Reducers (maybe)](/worksheet.html?filename=src/den_of_clojure/sec7.clj)
-;;; 8. [Transducers (maybe maybe)](/worksheet.html?filename=src/den_of_clojure/sec8.clj)
+;;; 8. [<strike>Transducers (next time perhaps)</strike>](/worksheet.html?filename=src/den_of_clojure/sec8.clj)
 ;; **
 
 ;; **
