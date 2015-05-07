@@ -52,7 +52,7 @@ s
 ;; @@
 
 ;; @@
-(first (seq (.getBytes "foo")))
+(first (seq "foo"))
 ;; @@
 
 ;; **
