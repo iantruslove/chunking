@@ -80,7 +80,7 @@ s
 ;;; ## The details
 ;;; Seqs  are implementations of `clojure.lang.ISeq`
 ;;;
-;;; See `../../target/ubersource/clojure/1.6.0/clojure/lang/ISeq.java`
+;;; See `../../target/ubersource/clojure/1.7.0-beta2/clojure/lang/ISeq.java`
 ;;; * `.first` / `.next` / `.cons`
 ;; **
 
