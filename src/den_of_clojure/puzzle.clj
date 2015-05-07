@@ -38,6 +38,16 @@
 ;;; ## BONUS POINTS
 ;;; Replace clojure's `map` function so that it operates highly
 ;;; parallelizedly.
+;;;
+;;; Write a "work function" that takes at least a millisecond to run
+;;; (`Thread/sleep`), and have it perform the difficult operation of
+;;; doubling the number passed in.
+;;;
+;;; Using this work function, map over a set of numbers with
+;;; cardinality >= 100, returning a set of doubled numbers, but show
+;;; that your parallelized version of the `map` function can run the
+;;; complete operation in <=10ms.
+;;;
 ;;; * What assumptions about side effects and ordering do you have to
 ;;;  impose on your function's callers?
 ;;;
