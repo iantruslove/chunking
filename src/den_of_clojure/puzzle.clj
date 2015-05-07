@@ -57,4 +57,10 @@
 (defn my-parallel-map [f coll]
   ;; ?!
   )
+
+(defn my-work-function [n]
+  ;; ??!!
+  )
+
+(my-parallel-map my-work-function ........)
 ;; @@
