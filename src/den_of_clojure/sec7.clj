@@ -30,11 +30,20 @@
   (:require [clojure.core.reducers :as r]))
 ;; @@
 
+;; **
+;;; A reducer represents some data and a computation yet to be performed.
+;; **
+
 ;; @@
 (def rr (r/map inc (range 20)))
 
+;; rr is a reducer
 rr
 ;; @@
+
+;; **
+;;; To do the work, a final reducing step has to happen:
+;; **
 
 ;; @@
 (reduce + rr)
@@ -44,9 +53,19 @@ rr
 (r/foldcat rr)
 ;; @@
 
+;; **
+;;; Since the result of the reducer hasn't yet been calculated, you
+;;; can do yet more work on them (again, no cost until the final
+;;; realizing `reduce`):
+;; **
+
 ;; @@
 (r/foldcat (r/map (partial * 2) rr))
 ;; @@
+
+;; **
+;;; `foldcat` is a very versatile way to finish off a reducer pipeline. Its return value is, amongst other things, reducible and seqable.
+;; **
 
 ;; @@
 (def fc (r/foldcat (r/map (partial * 2) rr)))
@@ -77,9 +96,10 @@ rr
 (defn use-valid-results [results]
   (println "Results:" results))
 
-(use-valid-results
- (take-while valid-result?
-             (map lookup-item starting-values)))
+(->> starting-values
+     (map lookup-item)
+     (take-while valid-result?)
+     use-valid-results)
 ;; @@
 
 ;; **
@@ -107,8 +127,10 @@ rr
   (comp (r/take-while valid-result?)
         (r/map lookup-item)))
 
-(use-valid-results
- (into [] (all-valid-results starting-values)))
+(->> starting-values
+     all-valid-results
+     (into [])
+     use-valid-results)
 ;; @@
 
 ;; **
