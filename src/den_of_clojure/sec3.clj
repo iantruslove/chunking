@@ -45,9 +45,10 @@
 ;; @@
 
 ;; @@
-(use-valid-results
- (take-while valid-result?
-             (map lookup-item starting-values)))
+(->> starting-values
+     (map lookup-item)
+     (take-while valid-result?)
+     use-valid-results)
 ;; @@
 
 ;; **
